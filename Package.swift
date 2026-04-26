@@ -15,7 +15,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "BlueForgeEngine",
-            url: "https://github.com/gopalsorathiya/BlueForgeSDK/releases/download/1.0.0/BlueForgeEngine.xcframework.zip",
+            url: "https://github.com/gopalsorathiya/BlueForgeSDK/releases/download/0.0.2/BlueForgeEngine.xcframework.zip",
             checksum: "f746fd92bda2895368a6ee3ab872e8da9f2137f024ba99057e9b3ec16246971e"
         )
     ]
