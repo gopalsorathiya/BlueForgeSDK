@@ -138,42 +138,74 @@ for await value in manager.notifications("FFF3") {
 
 ---
 
-## 🚀 OTA Firmware Update
+# 🚀 OTA Firmware Update
 
 ```swift
 let stream = manager.startOTA(
     firmwareURL: firmwareURL,
     checksum: "SHA256_CHECKSUM",
     configuration: BlueForgeOTAConfiguration(
-        writeCharacteristicUUID: "FFF3",
-        notifyCharacteristicUUID: "FFF4"
+        writeCharacteristicUUID: "FFF1",
+        notifyCharacteristicUUID: "FFF2",
+        resumeCharacteristicUUID: "FFF3",
+        controlCharacteristicUUID: "FFF4"
     )
 )
-
-for await status in stream {
-
-    switch status {
-
-    case .uploading(let progress):
-        print(progress)
-
-    case .completed:
-        print("Done")
-
-    case .failed(let error):
-        print(error)
-
-    default:
-        break
-    }
-}
 ```
 
-Cancel:
+---
 
-```swift
-manager.cancelOTA()
-```
+# 🧠 OTA PROTOCOL (FULL)
+
+## Flow
+
+1. Resume check (device returns last seq)
+2. Flush (reset state)
+3. Start (total packets + checksum)
+4. Streaming packets
+5. ACK every 16 packets
+6. Resume if interrupted
+7. Final SHA256 verification
+
+---
+
+## Packet Structure
+
+[SEQ (2)] + [PAYLOAD] + [CRC16 (2)]
+
+---
+
+## Validation Layers
+
+- CRC16 → packet safety  
+- Sequence → order guarantee  
+- SHA256 → full firmware integrity  
+
+---
+
+## Error Handling
+
+- CRC mismatch → resend  
+- Sequence mismatch → correction  
+- Disconnect → resume  
+
+---
+
+## Performance
+
+- 40–80 KB/s
+- Stable under packet loss
+- Optimized BLE throughput
+
+---
+
+# 🧠 Architecture
+
+- BlueForgeManager → Public API  
+- BLE Engine → Core layer  
+- OTA Engine → Transfer pipeline  
+- Logger → Logging system  
+- Monitor → Metrics system  
 
 ---
 
