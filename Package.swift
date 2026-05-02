@@ -15,8 +15,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "NovybleEngine",
-            url: "https://github.com/gopalsorathiya/NovybleSDK/releases/download/1.1.2/NovybleEngine.xcframework.zip",
-            checksum: "4e7ff1f6e08138bf6a9f6ebcb1cef59a92cc8a377ed56bf149cb306032a0a3d5"
+            url: "https://github.com/gopalsorathiya/NovybleSDK/releases/download/1.1.3/NovybleEngine.xcframework.zip",
+            checksum: "729a16de3a9063b1eb1ec0a25b39b684420790f34e1cf94ea4e9de03a3a90c56"
         )
     ]
 )
