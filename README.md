@@ -1,18 +1,18 @@
-# 📦 BlueForge iOS BLE SDK
+# 📦 Novyble iOS BLE SDK
 
 > Production-grade Bluetooth Low Energy (BLE) SDK for iOS  
 > Built for **speed, stability, and real-world device communication**
 
 ---
 
-## 🚀 Why BlueForge?
+## 🚀 Why Novyble?
 
 Most BLE SDKs fail in real production:
 - unstable connections  
 - poor OTA handling  
 - no visibility into performance  
 
-**BlueForge solves that.**
+**Novyble solves that.**
 
 ✔ Reliable BLE pipeline  
 ✔ High-speed OTA engine  
@@ -61,14 +61,14 @@ Most BLE SDKs fail in real production:
 
 Add:
 
-https://github.com/your-org/BlueForgeSDK
+https://github.com/your-org/NovybleSDK
 
 ---
 
 ## 🔑 License Integration (MANDATORY)
 
 ```swift
-let manager = BlueForgeManager(
+let manager = NovybleManager(
     licenseKey: "YOUR_LICENSE_KEY",
     autoReconnect: true
 )
@@ -144,7 +144,7 @@ for await value in manager.notifications("FFF3") {
 let stream = manager.startOTA(
     firmwareURL: firmwareURL,
     checksum: "SHA256_CHECKSUM",
-    configuration: BlueForgeOTAConfiguration(
+    configuration: NovybleOTAConfiguration(
         writeCharacteristicUUID: "FFF1",
         notifyCharacteristicUUID: "FFF2",
         resumeCharacteristicUUID: "FFF3",
@@ -201,7 +201,7 @@ let stream = manager.startOTA(
 
 # 🧠 Architecture
 
-- BlueForgeManager → Public API  
+- NovybleManager → Public API  
 - BLE Engine → Core layer  
 - OTA Engine → Transfer pipeline  
 - Logger → Logging system  
@@ -212,9 +212,9 @@ let stream = manager.startOTA(
 ## 📊 Monitoring
 
 ```swift
-BlueForgeMonitor.shared.start()
+NovybleMonitor.shared.start()
 
-BlueForgeMonitor.shared.onUpdate = { metrics in
+NovybleMonitor.shared.onUpdate = { metrics in
     print(metrics.uploadKBps)
 }
 ```
@@ -222,7 +222,7 @@ BlueForgeMonitor.shared.onUpdate = { metrics in
 Export CSV:
 
 ```swift
-let url = BlueForgeMonitor.shared.exportReportCSV()
+let url = NovybleMonitor.shared.exportReportCSV()
 ```
 
 ---
@@ -232,13 +232,13 @@ let url = BlueForgeMonitor.shared.exportReportCSV()
 ### Log
 
 ```swift
-BlueForgeLogger.shared.log("Connected")
+NovybleLogger.shared.log("Connected")
 ```
 
 ### Live Stream
 
 ```swift
-for await log in BlueForgeLogger.shared.liveLogs {
+for await log in NovybleLogger.shared.liveLogs {
     print(log)
 }
 ```
@@ -246,18 +246,18 @@ for await log in BlueForgeLogger.shared.liveLogs {
 ### Export
 
 ```swift
-let url = BlueForgeLogger.shared.exportLogs()
+let url = NovybleLogger.shared.exportLogs()
 ```
 
 ---
 
 ## 🧠 Architecture
 
-- BlueForgeManager → Public SDK API  
-- BlueForgeClient → BLE engine  
-- BlueForgeOTAEngine → OTA pipeline  
-- BlueForgeLogger → Logs  
-- BlueForgeMonitor → Metrics  
+- NovybleManager → Public SDK API  
+- NovybleClient → BLE engine  
+- NovybleOTAEngine → OTA pipeline  
+- NovybleLogger → Logs  
+- NovybleMonitor → Metrics  
 
 ---
 
@@ -306,7 +306,7 @@ Include:
 
 ## 🏁 Summary
 
-BlueForge is built for teams who need:
+Novyble is built for teams who need:
 
 - Stable BLE communication  
 - Reliable OTA updates  

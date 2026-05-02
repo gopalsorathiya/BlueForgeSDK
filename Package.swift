@@ -2,21 +2,21 @@
 import PackageDescription
 
 let package = Package(
-    name: "BlueForgeEngine",
+    name: "NovybleEngine",
     platforms: [
         .iOS(.v13)
     ],
     products: [
         .library(
-            name: "BlueForgeEngine",
-            targets: ["BlueForgeEngine"]
+            name: "NovybleEngine",
+            targets: ["NovybleEngine"]
         )
     ],
     targets: [
         .binaryTarget(
-            name: "BlueForgeEngine",
-            url: "https://github.com/gopalsorathiya/BlueForgeSDK/releases/download/0.0.4/BlueForgeEngine.xcframework.zip",
-            checksum: "f746fd92bda2895368a6ee3ab872e8da9f2137f024ba99057e9b3ec16246971e"
+            name: "NovybleEngine",
+            url: "https://github.com/gopalsorathiya/BlueForgeSDK/releases/download/1.0.0/NovybleEngine.xcframework.zip",
+            checksum: "4e7ff1f6e08138bf6a9f6ebcb1cef59a92cc8a377ed56bf149cb306032a0a3d5"
         )
     ]
 )
