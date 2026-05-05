@@ -1,11 +1,11 @@
-# 📦 Novyble iOS BLE SDK
+# Novyble iOS BLE SDK
 
 > Production-grade Bluetooth Low Energy (BLE) SDK for iOS  
 > Built for **speed, stability, and real-world device communication**
 
 ---
 
-## 🚀 Why Novyble?
+## Why Novyble?
 
 Most BLE SDKs fail in real production:
 - unstable connections  
@@ -22,40 +22,40 @@ Most BLE SDKs fail in real production:
 
 ---
 
-## ✨ Core Features
+## Core Features
 
-### 🔗 BLE Core
+### BLE Core
 - Scan, connect, disconnect
 - Service discovery
 - Read / Write / Notify
 - Auto reconnect support
 
-### 🚀 OTA Engine
+### OTA Engine
 - Secure firmware validation (SHA256)
 - Streaming upload pipeline
 - Retry & failure handling
 - Progress tracking
 
-### 📊 Performance Monitoring
+### Performance Monitoring
 - Throughput (KB/s)
 - Packet rate
 - Retry count
 - Efficiency %
 - Bottleneck detection
 
-### 📜 Logging System
+### Logging System
 - Async log streaming
 - File persistence
 - Export logs
 
-### 🔐 Licensing System
+### Licensing System
 - Bundle-locked keys
 - Tier-based access
 - Runtime validation
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### Swift Package Manager
 
@@ -65,7 +65,7 @@ https://github.com/your-org/NovybleSDK
 
 ---
 
-## 🔑 License Integration (MANDATORY)
+## License Integration (MANDATORY)
 
 ```swift
 let manager = NovybleManager(
@@ -80,7 +80,7 @@ If license is invalid:
 
 ---
 
-## 📡 BLE Usage
+## BLE Usage
 
 ### Scan
 
@@ -114,7 +114,7 @@ await manager.disconnect()
 
 ---
 
-## 📦 GATT Operations
+## GATT Operations
 
 ### Read
 
@@ -138,7 +138,7 @@ for await value in manager.notifications("FFF3") {
 
 ---
 
-# 🚀 OTA Firmware Update
+# OTA Firmware Update
 
 ```swift
 let stream = manager.startOTA(
@@ -155,7 +155,7 @@ let stream = manager.startOTA(
 
 ---
 
-# 🧠 OTA PROTOCOL (FULL)
+# OTA PROTOCOL (FULL)
 
 ## Flow
 
@@ -199,7 +199,7 @@ let stream = manager.startOTA(
 
 ---
 
-# 🧠 Architecture
+# Architecture
 
 - NovybleManager → Public API  
 - BLE Engine → Core layer  
@@ -209,7 +209,7 @@ let stream = manager.startOTA(
 
 ---
 
-## 📊 Monitoring
+## Monitoring
 
 ```swift
 NovybleMonitor.shared.start()
@@ -227,7 +227,7 @@ let url = NovybleMonitor.shared.exportReportCSV()
 
 ---
 
-## 📜 Logging
+## Logging
 
 ### Log
 
@@ -251,7 +251,7 @@ let url = NovybleLogger.shared.exportLogs()
 
 ---
 
-## 🧠 Architecture
+## Architecture
 
 - NovybleManager → Public SDK API  
 - NovybleClient → BLE engine  
@@ -261,7 +261,7 @@ let url = NovybleLogger.shared.exportLogs()
 
 ---
 
-## 🔐 License Tiers
+## License Tiers
 
 | Tier        | Features |
 |------------|--------|
@@ -271,7 +271,7 @@ let url = NovybleLogger.shared.exportLogs()
 
 ---
 
-## 💰 Pricing
+## Pricing
 
 | Plan        | Price |
 |------------|------|
@@ -284,7 +284,7 @@ let url = NovybleLogger.shared.exportLogs()
 
 ---
 
-## 📞 Get License Key
+## Get License Key
 
 Email: gopalsorathiya@gmail.com  
 
@@ -295,7 +295,7 @@ Include:
 
 ---
 
-## ⚠️ Important
+## Important
 
 - License is required  
 - Bundle ID locked  
@@ -304,7 +304,7 @@ Include:
 
 ---
 
-## 🏁 Summary
+## Summary
 
 Novyble is built for teams who need:
 
